@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PWA Engine</title>
+    <script src="/web/wasm_exec.js"></script>
+    <script src="/web/app.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>PWA Engine</h1>
+</div>
+<script>
+    console.log("Hello World!");
+
+    const go = new Go();  // provided by wasm_exec.js
+    WebAssembly.instantiateStreaming(fetch("/web/app.wasm"), go.importObject)
+        .then(result => go.run(result.instance));
+    console.log("Hello World Again!");
+</script>
+</body>
+</html>

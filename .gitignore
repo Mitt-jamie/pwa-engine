@@ -1,0 +1,18 @@
+bin/
+web/
+tmp/
+/pwa-engine
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Dependency directories
+vendor/
+
+# Logs
+*.log
