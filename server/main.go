@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	// Serve static WASM and JS files
 	http.Handle("/web/", http.StripPrefix("/web/", http.FileServer(http.Dir("web"))))
 
@@ -13,6 +14,8 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "server/index.html")
 	})
+
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("client/css"))))
 
 	log.Println("Server running on :8000")
 	if err := http.ListenAndServe(":8000", nil); err != nil {
