@@ -1,0 +1,4 @@
+[build]
+cmd = "GOARCH=wasm GOOS=js go build -o web/app.wasm ./client && go build -o pwa-engine ./server"
+bin = "/app/pwa-engine"
+include_ext = ["go", "html", "css", "js"]

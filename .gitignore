@@ -3,6 +3,10 @@ web/
 tmp/
 /pwa-engine
 
+# Tailwind build artifacts
+tailwind/node_modules/
+tailwind/dist/
+
 # OS files
 .DS_Store
 Thumbs.db

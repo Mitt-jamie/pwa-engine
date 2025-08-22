@@ -17,6 +17,6 @@ func (b *ButtonInput) Render() app.UI {
 		Class(
 			"bg-gray-100 text-gray-900 font-semibold px-6 py-2 rounded-sm " +
 				"hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 " +
-				"transition-colors duration-150 ease-in-out",
+				"transition-colors duration-150",
 		)
 }

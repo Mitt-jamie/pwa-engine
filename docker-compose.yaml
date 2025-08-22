@@ -1,18 +1,12 @@
 services:
   pwa-engine:
-    image: golang:1.23
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     container_name: pwa-engine
     working_dir: /app
     ports:
       - "8000:8000"
     volumes:
       - .:/app
-    command: >
-      sh -c "
-        mkdir -p web &&
-        cp $(go env GOROOT)/misc/wasm/wasm_exec.js web/ &&
-        GOARCH=wasm GOOS=js go build -o web/app.wasm ./client &&
-        go build -o pwa-engine ./server &&
-        ./pwa-engine
-      "
-
+    command: air
